@@ -14,17 +14,17 @@ var gulpfileGenerator = module.exports = generators.Base.extend({
     self.prompt([{
       type: 'value',
       name: 'srcCss',
-      message: 'What is your relative directory path for your source files of scss (sass) ?',
+      message: 'What is the relative path to your sass or scss source files (sass)?',
       default: './css/**/*.scss'
     }, {
       type: 'value',
       name: 'distCss',
-      message: 'What is your relative directory path for your dist files of scss (sass) ?',
+      message: 'What is the relative path to your processed css files (sass)?',
       default: './dist/css'
     }, {
       type: 'value',
       name: 'concat',
-      message: 'Do you want to concat your files into one file (sass) ?',
+      message: 'Do you want to concatenate your files into one file (sass)?',
       default: 'yes'
     }], function (answers) {
       answers.concat = answers.concat.indexOf('no') !== -1 ? false : true;
@@ -41,7 +41,7 @@ var gulpfileGenerator = module.exports = generators.Base.extend({
       self.prompt([{
         type: 'value',
         name: 'concatFile',
-        message: 'What is the name of your main css file for dist (sass) ?',
+        message: 'What is the name of your main css file for dist (sass)?',
         default: 'main.css'
       }], function (answer) {
         _.assign(self.vars, answer);
