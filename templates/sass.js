@@ -6,7 +6,7 @@ var $ = require('gulp-load-plugins')({
  
 gulp.task('sass', function () {
   gulp.src('<%= srcCss %>')
-    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.sass()/*.on('error', $.sass.logError)*/)
     <% if(concat) {%>.pipe($.concat('<%= concatFile %>'))<%}%>
     .pipe(gulp.dest('<%= distCss %>'));
 });
